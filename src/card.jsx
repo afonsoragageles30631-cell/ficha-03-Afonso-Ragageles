@@ -1,14 +1,21 @@
-function card ({name, attack, type}){
-    return(
-        <li className = "card" >
+import { useState } from "react";
+function Card({ name, attack, type, defense }) {
+const [likes, setLikes] = useState(0);
+return (
+<li className="card">
+<h3>{name}</h3>
+  <p>Tipo: {type}</p>
+  <p>Ataque: {attack}</p>
+  <p>Defesa: {defense}</p>
 
-            <p>{name}</p>
-            <p>{attack}</p>
-            <p>{type}</p>
+  {attack >= 6 && <span>Forte</span>}
 
-            {name >=5 && <span></span>}
+  <br />
 
-            </li>
-    );
+  <button onClick={() => setLikes(likes + 1)}>
+    ♥ {likes}
+  </button>
+</li>
+);
 }
-export default card;
+export default Card;
