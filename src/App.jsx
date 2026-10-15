@@ -11,6 +11,7 @@
 // Tarefa 1: substitui este array vazio pelo array cards do teu server
 // (o que fizeste na aula 2).
 import Card from "./card.jsx";
+import { useState } from "react";
 
 const cards = [ 
   { name: "Dragão de Cobalto", type: "Criatura", attack: 7, defense: 5 },
@@ -24,6 +25,8 @@ function App() {
   return (
     <main>
       <h1>A minha coleção</h1>
+
+      <p> Eu tenho {cards.length} cartas</p>
 
       <ul>
         {cards.map((card) =>(
